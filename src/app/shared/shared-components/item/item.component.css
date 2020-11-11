@@ -1,0 +1,40 @@
+.item{
+  /* border-bottom: 1px solid black; */
+  padding: 1rem 0 1rem 0;
+}
+
+.media {
+  display: flex;
+  transition: 2s;
+}
+ 
+.media-title{
+  display: flex;
+  flex-direction: column;
+}
+ 
+.media-index{
+  width: 2rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.media-menu{
+    margin-left: 1rem;
+}
+
+a{
+  color: black;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+#text-div{
+  border: 1px solid black;
+  padding: .2rem;
+}

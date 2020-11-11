@@ -1,0 +1,6 @@
+<a (click)="goBack()">⬅ back</a>
+<div *ngIf="item" style="margin-top: 2rem">
+<app-item [id]="item.id" [showText]="true"></app-item>
+<mat-divider></mat-divider>
+<app-comments *ngFor="let id of item.kids" [commentId]="id"></app-comments>
+</div>

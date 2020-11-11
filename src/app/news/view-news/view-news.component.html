@@ -1,0 +1,9 @@
+<app-menu (selectedMenu)="onMenuSelect($event)"></app-menu>
+<div class="spacer"></div>
+<app-item *ngFor="let id of stories; let i=index"
+ [id]="id" [index]="i" [isUserSubmission]="false"
+ (viewItem)="viewItem($event)"></app-item>
+ <div class="pagination">
+    <button mat-button (click)="prevPage()">Prev</button>
+    <button mat-button (click)="nextPage()">Next</button>
+ </div>

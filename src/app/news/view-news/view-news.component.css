@@ -1,0 +1,12 @@
+.spacer{
+    height: 1rem;
+}
+
+.pagination{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: auto;
+}

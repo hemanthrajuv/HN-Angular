@@ -1,0 +1,34 @@
+<div style="min-height: 4rem;border-bottom: 1px solid black;">
+	<div *ngIf="!isLoading; else loading">
+		<div class="item" *ngIf="item">
+			<div class="media">
+				<div class="media-index"><strong>{{page | getIndex: index}}</strong></div>
+				<div class="media-content">
+					<a target="_blank" href="{{item.url}}"  [class.disabled]="item.url ?  false: true"><strong>{{item.title}}</strong></a><small *ngIf="item.url">({{item.url | urlShortten}})</small><br>
+					<span><small>{{item.time | timeAgo}} </small>
+						<span *ngIf="!isUserSubmission">• By <a (click)="viewUser(item.by)">{{item.by}}•</a></span>
+						<span *ngIf="item.score">{{item.score}} points</span>
+						<span *ngIf="isUserSubmission">• Submission Type: {{item.type}} </span>
+					</span>
+					<div *ngIf="toggleText && item.text" id="text-div"><small [innerHtml]="item.text"></small></div>
+				</div>
+			</div>
+			<div class="media-menu">
+			<span *ngIf="item.text">
+				<a mat-button *ngIf="!toggleText" (click)="onViewTextClick()">
+					show text
+				</a>
+				<a mat-button *ngIf="toggleText" (click)="onViewTextClick()">
+					hide text
+				</a>
+			</span>
+				<a  *ngIf="item.kids" (click)="onClickComments(item.id)" mat-button>view {{item.kids.length}} comment<span *ngIf="item.kids.length > 1">s</span></a>
+				<span class="spacer"></span>
+			</div>
+		</div>
+	</div>
+	<ng-template #loading>
+	<mat-progress-bar mode="buffer"></mat-progress-bar>
+		<!-- <progress class="progress is-large is-info" max="100">60%</progress> -->
+	</ng-template>
+</div>

@@ -1,0 +1,14 @@
+    <!-- <mat-toolbar class="menu-btns">
+        <button mat-button [ngClass]="(newsType === 'new')? 'is-active' : ''" (click)="onMenuSelected('new')" >New</button>
+        <button mat-button [ngClass]="(newsType === 'show')? 'is-active' : ''" (click)="onMenuSelected('show')">Show</button>
+        <button mat-button [ngClass]="(newsType === 'ask')? 'is-active' : ''" (click)="onMenuSelected('ask')" >Ask</button>
+        <button mat-button [ngClass]="(newsType === 'job')? 'is-active' : ''" (click)="onMenuSelected('job')" >Job</button>
+        {{newsType}}
+    </mat-toolbar>     -->
+    <mat-toolbar class="menu-btns">
+        <button mat-button [routerLink]="['/news']" routerLinkActive="is-active" [queryParams]="{newsType: 'new'}">New</button>
+        <button mat-button [routerLink]="['/news']" routerLinkActive="is-active" [queryParams]="{newsType: 'show'}">Show</button>
+        <button mat-button [routerLink]="['/news']" routerLinkActive="is-active" [queryParams]="{newsType: 'ask'}" >Ask</button>
+        <button mat-button [routerLink]="['/news']" routerLinkActive="is-active" [queryParams]="{newsType: 'job'}" >Job</button>
+        <!-- {{newsType}} -->
+    </mat-toolbar>    

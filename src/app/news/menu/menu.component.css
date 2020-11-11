@@ -1,0 +1,41 @@
+.menu-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0;
+    height: auto;
+  }
+  .menu-btns button {
+    /* background-color: whitesmoke; */
+    border-radius: 0;
+    margin: 0;
+    padding: 0 3rem 0 3rem;
+    border: 1px black solid;
+    border-top: 0;
+    border-bottom: 0;
+    margin-right: -1px;
+    transition: 0.2s;
+  }
+
+  /* .menu-btns button:hover {
+    background-color: white;
+  } */
+  
+  .is-active {
+    background-color: black;
+    color: whitesmoke;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu-btns button {
+      padding: 0 2rem 0 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .menu-btns button {
+      padding: 0 1rem 0 1rem;
+    }
+  }

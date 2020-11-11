@@ -1,0 +1,8 @@
+<button mat-button (click)="goBack()">⬅ back</button>
+<div *ngIf="user">
+    <span class="title is-3 is-spaced"> {{user.id}}</span><br>
+    <span class="subtitle is-6">user created {{user.created}}</span><br>
+    <span>user karma {{user.karma}}</span><br>
+    <span *ngIf="user.submitted"><a [routerLink]="['submissions']" >view submissions</a> {{user.submitted.length}}</span>
+    <div *ngIf="user.about" [innerHtml]="user.about" style="border: 1px solid black"></div>
+</div>

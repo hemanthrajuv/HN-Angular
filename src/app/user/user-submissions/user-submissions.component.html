@@ -1,0 +1,11 @@
+<a (click)="goBack()">⬅ back</a>
+<h2 style="text-align: center;">Submissions by {{userId}}</h2>
+<div *ngIf="submissions">
+    <!-- <mat-list *ngFor="let item of submissions; let i=index"> -->
+        <app-item *ngFor="let id of submissions; let i=index"
+        [id]="id" [index]="i" [isUserSubmission]="true"
+        (viewItem)="viewItem($event)"></app-item>
+        <app-item [id]="25042138"></app-item>
+    <!-- </mat-list> -->
+</div>
+<a mat-button (click)="onClickMore()">more</a>

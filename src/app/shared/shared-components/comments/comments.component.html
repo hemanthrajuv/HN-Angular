@@ -1,0 +1,26 @@
+<article class="media">
+    <figure class="media-left">
+    </figure>
+    <div class="media-content" 
+    *ngIf="!isLoading; else loading">
+      <div class="content" *ngIf="comment" >
+        <div>
+          <strong><a (click)="viewUser(comment.by)">{{comment.by}}</a></strong>
+          <br>
+          <div [innerHtml]="comment.text"></div>
+          <br>
+          <small> <a *ngIf="comment.kids" (click)="toggleViewComments()">Comments
+              <span>{{comment.kids.length}}</span>
+          </a> {{comment.time | timeAgo}}</small>
+        </div>
+      </div>
+      <div *ngIf="viewComments">
+        <app-comments *ngFor="let id of comment.kids" [commentId]='id'></app-comments>
+      </div>
+    </div>
+    <ng-template #loading>
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
+      <!-- <progress class="progress is-large is-info" max="100">60%</progress> -->
+  </ng-template>
+</article>
+<!-- <hr> -->
